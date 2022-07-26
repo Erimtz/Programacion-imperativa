@@ -1,0 +1,66 @@
+
+mecanismos de control de flujo o Condicionales
+Nos permiten evaluar condiciones y realizar
+diferentes acciones según el resultado de la
+evaluación 
+
+Un condicional permite ejecutar un bloque de 
+codigo siempre que se cumpla la condición
+
+IF= SI
+ej: 
+if (condicion A EVALUAR) {
+   
+}
+
+ELSE= SI NO se cumple la condición del if
+
+Else if -> necesita de 1 o varias sentencias a evaluar
+
+Nota:
+- un IF no siempre necesita de un ELSE o ElSE IF 
+- Se puede tener muchos else if si así se quiere
+- Siempre que implemente un ELSE, debera ecistir uno de ellos.
+
+IF TERNARIO Y SWITCH
+eL IF TERNARIO no va con corchetes {} y tampoco lleva ELSE
+y toda la línea de codigo va de manera horizontal
+busca mirar si se cumple o no sé cumple la 
+condición.
+
+modo de empleo de IF TERNARIO:
+ej:
+condicion ? expresión para el true : expresion para el false ;
+Es obligatorio implementar el código cuando la condición
+NO SÉ CUMPLE!
+
+En caso de que NO QUIERAS NADA se puede escribir un 
+string vacio
+EJ:
+let elMayor = 4 > 10 ' " ";
+
+Condicional  SWITCH 
+pregunta por algo -> si ese algo es verdadero -> ejecuta un bloque de código
+
+como se emplea :
+switch (expresión a evaluar) {
+   case caso1: 
+      console.log ("se cumple el caso1");
+  break;
+}
+
+La palabra (break) permite cortar la ejecución del código 
+y salir de esta manera del swicth.
+
+Podemos implementar cuantos casos sean necesarios
+
+Se puede implementar DEFAULT el cual se ejecutara si 
+en ninguno de los casos coincide la expresión ejecutada.
+
+El IF TERNARIO es una línea de código resumida para hacer
+evaluaciones.
+
+En cambio, para con el SWITCH, puedes trabajar con el siempre y cuando 
+quieras evaluar si una expresión es exactamente igual a un valor esperado.  
+
+0821TDBD1N2C6LAED0521PT

@@ -1,0 +1,93 @@
+                     PROGRAMACIÓN IMPERATIVA
+				
+				MODULANDO
+
+Para exportar -> module.exports = obj_literal
+
+Podemos dividir los módulos en tres categorías:
+
+ - Módulos externos son aquellos creados por otras personas o empresas, 
+ como lo son comúnmente las librerías y frameworks. Se deben instalar en la carpeta de nuestro trabajo.
+ 
+ - Módulos nativos similares a los externos, son funciones y métodos que nos ayudan a crear nuestras aplicaciones,
+ con la diferencia de que vienen incluidos en el lenguaje (o en el caso de Node.js incluidos en el mismo entorno).
+ 
+ - Módulos creados son nuestras creaciones. Pueden ser variables, funciones, arreglos, casi cualquier cosa que nosotros queramos exportar.
+				
+					 
+					 ¿QUÉ ES UN MODULO?
+Es un bloque de código reutilizable, una funcionalidad cuya 
+existencia no altera incidentalmente el comportamiento de otros 
+bloques de código.
+
+                          
+ 
+                       FILE SYSTEM
+El módulo nativo de Node.js es = file.system(fs)	
+Este módulo nos provee la posibilidad de trabajar con el sistema
+de archivos de nuestra pc, para poder realizar algunas lecturas de archivos, modificarlos o crearlos.
+
+
+          .writeFileSync()
+Es un método que trae el paquete nativo file system que nos permite escirbir 
+archivos. Recibe dos parámetros:
+
+- El primero corresponde al archivo en donde queremos escribir.
+- El segundo corresponde al contenido que queremos escribir.
+
+ej: 
+{} const fs = require('fs');
+   fs.writeFileSync('estrenos-2020.txt', 'Titanic 2');
+
+           .appendFileSync()
+Es un método que trae el paquete nativo file system que nos permite
+agregar contenido a archivos. Recibe dos parámetros;
+- El primero corresponde al archivo en donde queramos escribir.
+- El segundo corresponde al contenido que queremos escribir.
+
+
+.writeFileSync y .appendFileSync -> si le pasamos el 
+nombre de un archivo que aún no existe, el mismo método se encargará de crearlo.
+
+.appendFileSync() -> Agrega el contenido al final del contenido existente sin borrarlo.
+
+            .readFileSync()
+Es un método que trae el paquete nativo file system que nos permite 
+recuperar datos de un archivo para poder usarlos.
+
+- Como primer parámetro recibe la ruta del archivo que queremos leer.
+EJ:
+{} const fs = require('fs');
+   let sitcoms = fs.readFileSync('sitcoms.txt');
+
+-Para poder decodificar los datos que el método devuelve es fundamental pasarle
+un segundo parámetro aclarando el tipo de encoding.
+EJ:
+{} let sitcoms = fs.readFileSync('sitcoms.txt', 'utf-8'); o {encoding: "utf-8"}
+
+> Si estamos leyendo un archivo JSON, hay que convertir ese string en un objeto literal para poder manipular los datos
+usando el método JSON.parse()
+
+-  Para los datos en formato JSON a un objeto literal para poder ser manipulado con Js.
+
+EJ:
+{} let usersJSON = fs.readFileSync('users.json', 'utf-8');
+   let users = JSON.parse(userJSON);
+					 
+					 
+	Se pueden usar varios exports pero solo un module.exports
+	PERO NO ambos a la vez
+
+    module.exports = exporta el objeto literal directamente
+	exports = armando un objeto literal que contenga las propiedades que voy a exportar
+	
+	
+	ej: export.propiedad
+	
+
+				 
+					 
+					 
+		
+
+						  

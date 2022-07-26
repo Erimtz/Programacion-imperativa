@@ -1,0 +1,195 @@
+                           PROGRAMACIÓN IMPERATIVA
+       OBJETOS LITERALES
+Los objetos literales son la representación en CÓDIGO de un ELEMENTO de la VIDA REAL.	   
+	   
+En JavaScript, un objeto literal es una entidad independiente con propiedades. Y  esas propiedades tienen valores.
+
+
+         ESTRUCTURA BÁSICA
+Un objeto es una estructura de datos que puede contener propiedades y métodos.
+Para crearlo usamos llave de apertura y de cierre {}.
+
+{} let auto = {
+    patente : 'AC 134 DD',
+	};
+	
+	
+	    PROPIEDADES DE UN OBJETOS
+Un objeto puede tener la cantidad de propiedades que queramos. Si hay más de una,
+las separamos con comas ,.
+Con la notación objeto.propiedad accedemos al valor de cada una de ellas.
+		
+		
+{}  let tenista = {
+    nombre = 'Roger',
+    apellido = 'Federer'
+   };
+
+console.log(tenista.nombre) /// Roger
+console.log(tenista.apellido) /// Federer
+
+
+        MÉTODOS DE UN OBJETO
+Una propiedad puede almacenar cualquier tipo de dato.
+Si una propiedad almacena una función, diremos que es un método del objeto.
+Con una estructura similar a la de las funciones expresadas, vemos que se crean
+mediante el nombre del método, seguido de una función anónima.
+		
+{}  let tenista = {
+    nombre = 'Roger',
+    edad = 38,
+	activo: true,
+	saludar: function(){
+	     return '¡Hola! Me llamo Roger';
+		 }
+   };		
+   
+      EJECUCIÓN DE UN MÉTODO
+Para ejecutar un método de un objeto usamos la notación objeto.metodo(). Los
+paréntesis del final son los que hacen que el método se ejecute.	  
+
+
+{}  let tenista = {
+    nombre = 'Roger',
+    apellido = 'Federer'
+	saludar: function(){
+	     return '¡Hola! Me llamo Roger';
+		 }
+   };
+
+console.log(tenista.saludar()); // ¡Hola! Me llamo Roger
+
+
+        TRABAJANDO DENTRO DEL OBJETO
+La palabra reservada this hace referencia al objeto en sí donde estamos parados.
+Es decir, el objeto en sí donde escribimos la palabra.
+Con la notación this.propiedad accedemos al valor de cada propiedad interna
+de ese objeto.		
+
+{}  let tenista = {
+    nombre = 'Roger',
+    apellido = 'Federer'
+	saludar: function(){ return '¡Hola! Me llamo' + this.nombre;}
+	
+   };
+
+console.log(tenista.saludar()); // ¡Hola! Me llamo Roger
+
+
+                                  FUNCIONES CONSTRUCTORAS
+La función constructora nos permite armar un molde y luego crear todos los objetos
+que necesitemos.
+La función recibe un parámetro por cada propiedad que queramos asignarle al objeto.
+
+{} function auto(marca, modelo){
+   this.marca = marca;
+   this.modelo = modelo;
+};
+								  ESTRUCTURA DE UNA FUNCIÓN CONSTRUCTORAS
+- Nombre
+Definimos un nombre para la función, que será el nombre de nuestro constructor.
+Por convención, solemos nombrar a las funciones constructoras con la primera letra
+mayúscula. Esto es para diferenciarlas de las funciones normales.
+
+-Parámetros
+Definimos la cantidad de parámetros que consideremos necesarios para crear
+nuestro objeto.
+Todos los parámetros serán obligatorios para poder crear el objeto, a menos que
+definamos lo contrario.
+
+-Propiedades
+Con la notación this.propiedad definimos la propiedad del objeto que
+estamos creando en ese momento.
+Por lo general los valores de las propiedades serán los que vengan por
+parámetros.
+								  
+								  
+								  
+								  INSTANCIAR UN OBJETO
+La función constructora Auto() espera dos parámetros: marca y modelo. Para crear un
+objeto Auto debemos usar la palabra reservada new y llamar a la función pasándole los
+parámetros que espera.
+
+Instanciar un objeto:
+{} let miAuto = new Auto('Ford', 'Falcon');
+
+
+Cuando ejecutamos el método new para crear un objeto, lo que nos devuelve es una
+instancia. Es decir, en la variable miAuto tendremos almacenada una instancia del
+objeto Auto. Usando la misma función, podemos instanciar cuantos autos queramos.
+
+
+{} let miOtroAuto = new Auto('Chevrolet', 'Corvette');
+								  
+								  
+								  JSON = (JavaScript Object Notation)
+Es un formato de texto sencillo utilizado para el intercambio de datos entre 
+distintos sistemas.
+
+
+*** En la web la mayoría de las peticiones y sus respuestas viajan como texto plano, es decir texto sin condificaciones especiales****
+
+JSON, al ser UNA CADENA DE TEXTO simple, es un FORMATO IDEAL PARA TRANSMITIR INFORMACIÓN
+entre  sitios y aplicaciones web. 'Especialmente si tenemos en cuenta que JavaScript está presente en todos los
+navegadores modernos.
+
+
+La otra ventaja de JSON es que cualquier lenguaje de progrmación puede interpretarlo con facilidad. La mayoria e los 
+lenguajes web trabajan nativamente con JSON.
+
+
+Es muy similar al objeto literal que ya conocemos.
+Sus diferencias son:
+
+     OBJETO LITERAL                                                  JSON 					  
+- Admité comillas simples y dobles.                         - Solo se pueden usar comillas dobles.   
+- Las claves del obejto van sin comillas.                   - Las claves van entre comillas.
+- Podemos escribir métodos sin problemas.                   - No admite métodos, solo propiedades y valores.
+- Se recomienda poner una coma en la última propiedad.	   - No podemos poner una coma en el último elemento.
+
+
+PREGUNTA: En el cuadro de comparación de Objeto literal y JSON dice en objeto literal 'Las claves del objeto van sin comillas'
+
+****JSON NO SOPORTA MÉTODOS****
+
+- Javascript nos proporciona un OBJETO NATIVO JSON con dos métodos que 
+NOS PERMITEN CONVERTIR EL FORMATO de un archivo JSON  a objeto literal o 
+array y viceversa.
+
+              
+			  JSON.parse()
+Convierte un texto con formato JSON al tipo de dato equivalente de JavaScript
+-> RECIBE una cadena de texto con formato JSON
+-> DEVUELVE el mismo dato que recibió en formato JavaScript.
+
+// Entra como un array de JSON Y sale
+se vienose en consola un objeto literal de JavaScript.
+
+*****transforma un string en un objeto****
+
+
+
+               JSON.stringify()
+Convierte un tipo de dato de JavaScript en un texto en formato JSON
+- Recibe un tipo de dato JavaScript.
+- Devuelve una cadena de texto con formato JSON.
+
+*** Transforma un objeto a un string****
+			   
+> ¿Qué significa las siglas JSON?
+- JavaScript Object Notation
+
+>¿Para qué se utiliza JSON?
+- Para comunicar sistemas entre sí (intercambio de datos).
+
+
+> ¿Para qué puedo utilizar el método JSON.stringify()?
+-Para transformar un objeto en un string
+
+>¿Para qué puedo utilizar el método JSON.parse()?
+- Para transformar un string en un objeto.
+
+
+if -> ver si algo existe, es verdadero o falso, para comparaciones entre dos cosas, como condición, buscar
+
+for-> recorrer cosas, iterar listas.			   

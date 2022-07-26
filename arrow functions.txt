@@ -1,0 +1,60 @@
+                                        PROGRAMACIÓN IMPERATIVA
+               ARROW FUNCTIONS
+Recuerda que una función es un bloque de código que podemos invocar todas las veces que necesitemos.
+Puede realizar una tarea especifica y retornar un valor. Y nos permite agrupar el 
+código que vayamos a usar muchas veces.
+
+Las ARROW FUNCTIONS son una forma de crear funciones incorporadas a partir de ES6(ECMAScript version6).
+Una de sus ventajas es que son más concisas que las funciones clásicas creadas con la palabra reservada function.
+
+EJ:
+// forma clasica
+
+function sumar(a, b){
+ return a + b;
+}
+
+console.log(sumar(2,4));
+
+// ES6 arrow function
+let sumar = (a, b) => a + b;
+
+console.log(sumar(2, 4));
+
+          NOMBRE DE UNA FUNCIÓN ARROW
+Las funciones arrow son siempre anónimas. Es decir, 
+que no tienen nombre como las funciones normales.
+
+{} (a, b) => a + b;
+
+Si queremos nombrarlas, es necesario escribirlas como una función
+expresada. Es decir, asignarla como valor de una variable.
+
+EJ:
+
+{} let sumar = (a, b)	=> a + b; 
+
+          PARÁMETROS DE UNA FUNCIÓN ARROW
+Usemos paréntesis para indicar los parámetros. .
+* Si nuestra función no recibe parametros debemos escribirlos igual
+
+>Una particularidad de este tipo de funciones es que su recibe un único parámetro
+podemos prescindir de los paréntesis.
+
+EJ:
+{} let doble = a => a * 2;
+
+           LA FLECHA DE UNA FUNCIÓN ARROW
+La usamos para indicarle a JS que vamos a escribir una función 
+(reemplaza a la palabra reservada FUNCTION)
+
+{} let sumar = (a, b) => a + b;
+
+(Lo que está a la izq de la flecha será la entrada de la función (LOS PARÁMETROS)
+ y lo que está a la derecha, la lógica (y el posible retorno)
+
+                     
+                          CALLBACKS
+Un callback es una función que se pasa como parámetro de otra función.
+
+La función que lo recibe es quien se encarga de ejecutarla cuando sea necesario.										
